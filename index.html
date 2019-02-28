@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Wine Animation</title>
+        
+        <meta name="Title" content="Wine Animation" />
+        <meta name="description" content="Wine Animation is a jQuery plugin that transform a HTML5 canvas element into configurable wine animation using CreateJS library.">
+		<meta name="keywords" content="wine, animation, plugin, canvas, fill, level, bottle, glasses, water">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<script>
+        if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+            var msViewportStyle = document.createElement("style");
+            msViewportStyle.appendChild(
+                document.createTextNode(
+                    "@-ms-viewport{width:device-width}"
+                )
+            );
+            document.getElementsByTagName("head")[0].
+                appendChild(msViewportStyle);
+        }
+        </script>
+
+        <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/jquery-ui.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!-- CONTENT START-->
+        <div id="mainHolder">
+        	<!--<div class="header">Wine Animation</div> -->
+            <div class="secondHeader">Please regulate how much wine, vodka or beer you consumed.</div>
+            
+            <div class="thirdHeader">Wine (0.75l, 13.0%) </div>
+            <div class="sectionHolder">
+                <div class="canvasHolder">
+                    <canvas id="wineHolder" width="150" height="500"></canvas>
+                </div>
+                
+                <div class="wrapper">
+                	<div class="columnL">
+                        <div id="wineSlider">
+                            <div id="wine-handle" class="ui-slider-handle"></div>
+                        </div>
+                    </div>
+                    <div class="columnR">
+                        <input id="wineResult" name="wineResult" type="text" value="100" readonly>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="thirdHeader">Vodka </div>
+            <div class="sectionHolder">
+                <div class="canvasHolder">
+                    <canvas id="vodkaHolder" width="200" height="700"></canvas>
+                </div>
+                
+                <div class="wrapper">
+                	<div class="columnL">
+                        <div id="vodkaSlider">
+                            <div id="vodka-handle" class="ui-slider-handle"></div>
+                        </div>
+                    </div>
+                    <div class="columnR">
+                        <label for="vodkaResult">Grams of pure alchol</label>
+                        <input id="vodkaResult" name="vodkaResult" type="text" value="0" readonly>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="thirdHeader">Beer </div>
+            <div class="sectionHolder">
+                <div class="canvasHolder">
+                    <canvas id="beerHolder" width="150" height="420"></canvas>
+                </div>
+                
+                <div class="wrapper">
+                	<div class="columnL">
+                        <div id="beerSlider">
+                            <div id="beer-handle" class="ui-slider-handle"></div>
+                        </div>
+                    </div>
+                    <div class="columnR">
+                        <input id="beerResult" name="beerResult" type="text" value="0" readonly>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="editHolder" style="display:none">
+            	<div class="thirdHeader">Option to edit masking path</div>
+                <div class="desc">If you wish to have transparent background for the canvas, you can use the tools below to draw masking shape of wine fill area.</div>
+                <div class="canvasHolder leftContent">
+                    <canvas id="editWineHolder" width="150" height="420"></canvas>
+                 </div>
+                    
+                <div class='editActionHolder rightContent'>
+                	Drag and move the point to adjust the masking shape, copy the output array and past into plugins option <strong>maskPath</strong>.<br/><br/>
+                    
+                    Point X:
+                    <input id="newpointX" name="newpointX" type="text" value="100" /><br/>
+                    Point Y:
+                    <input id="newpointY" name="newpointY" type="text" value="100" /><br/>
+                    Curve Point X:
+                    <input id="newcurvepointX" name="newcurvepointX" type="text" value="120" /><br/>
+                    Curve Point Y:
+                    <input id="newcurvepointY" name="newcurvepointY" type="text" value="120" /><br/>
+                    
+                    <div id="addPoint" class="button">Add Point</div>
+                    <div id="removePoint" class="button">Remove Point</div>
+                    <div id="outputPoint" class="button">Ouput Array</div>
+                </div>
+            </div>
+        </div>
+        <!-- CONTENT END-->
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+        
+        <script src="js/vendor/createjs-2015.11.26.min.js"></script>
+        <script src="js/wine-animation.js"></script>
+        <script src="js/init.js"></script>
+    </body>
+</html>
